@@ -1,0 +1,18 @@
+.nave {
+    display: block;
+}
+nav h1 {
+    display: block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.buttonNav {
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    background-color: aquamarine;
+}
