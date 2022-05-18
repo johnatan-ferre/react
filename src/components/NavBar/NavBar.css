@@ -8,6 +8,7 @@ nav h1 {
 .container {
     display: flex;
     align-items: center;
+    margin: 10%
 }
 
 .buttonNav {
