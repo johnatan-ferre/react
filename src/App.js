@@ -2,7 +2,7 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar'
 // import CountFunction from './components/CountFunction/CountFunction';
-import ItemListContainer from './components/ItemListCotainer/ItemListContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <header className="App-header">
         <NavBar/>
         {/* <CountFunction/> */}
-        <ItemListContainer greeting='Aloha'/>
+        <ItemListContainer/>
         <p>
           Bienvenidos a esta página.
         </p>
