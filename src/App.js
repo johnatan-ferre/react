@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar'
 // import CountFunction from './components/CountFunction/CountFunction';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
@@ -12,10 +13,10 @@ function App() {
         <NavBar/>
         {/* <CountFunction/> */}
         <ItemListContainer/>
+        <ItemDetailContainer/>
         <p>
-          Bienvenidos a esta página.
-        </p>
-          Compre cuanto pueda
+          Gracias por su visita. Vuelva pronto.
+          </p>
         
       </header>
     </div>

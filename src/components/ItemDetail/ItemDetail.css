@@ -1,0 +1,10 @@
+.DetailCard {
+    display: flex;
+    margin: 10%;
+}
+
+.DetailContainer {
+    display: flex;
+    flex-direction: row;
+    border: 4px gray solid;
+}
