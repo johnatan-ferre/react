@@ -1,4 +1,5 @@
 import './ItemDetail.css'
+import ItemCount from '../ItemCount/ItemCount'
 
 const ItemDetail = ({name, img, desc, price}) => {
     return(
@@ -13,6 +14,7 @@ const ItemDetail = ({name, img, desc, price}) => {
                     <p>$ {price}</p>
                 </div>
             </div>
+        <ItemCount/>
         </div>
         
     )

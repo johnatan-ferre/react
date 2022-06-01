@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 function ItemCount({stock}) {
     const [count, setCount] = useState(0);
 
-    function agregar (){
+    function agregar () {
         if(count < stock){
             setCount(count + 1);
         }
@@ -16,7 +16,7 @@ function quitar () {
 }
 
 function onAdd (){
-    alert('Agregó ' + count + ' productos a su carrito.');
+    alert(`Agregó ${count} productos a su carrito.`);
 
 }
     return (
