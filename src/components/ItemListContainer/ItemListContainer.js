@@ -1,16 +1,25 @@
 import React, {useEffect, useState} from 'react'
-import customFetch from '../utils/CustomFetch';
-import productos from '../utils/productos';
+import {getItems, getItemsByCategory} from '../utils/CustomFetch';
 import ItemList from '../ItemList/ItemList';
+import { useParams } from 'react-router-dom'
 
 function ItemListContainer() {
     const [items, setItems] = useState([]);
 
-    useEffect(()=> {
-        customFetch(2000, productos)
-        .then(res => setItems(res))
-    }, [items]);
+    const { catId } = useParams()
 
+    useEffect(() => {
+        if(!catId) {
+            getItems().then(res => {
+                setItems(res)
+            })
+        } else {
+            getItemsByCategory(catId).then(res => {
+                setItems(res)
+            })
+        }
+        
+    }, [catId])
 
 return (
     <div className='contenedorLista'>

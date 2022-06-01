@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { getProduct } from '../utils/CustomFetch'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState()
 
+const { id } = useParams( )
+
     useEffect(()=> {
-        getProduct('1').then(res => {
+        getProduct(id).then(res => {
             setProduct(res)
         })
     }, [])
 
-
 return (
     <div>
-        <ItemDetail name={product?.name} 
-                    img={product?.img}
-                    desc={product?.desc}
-                    price={product?.price}/>
-
+        <ItemDetail {...product}/>
     </div>
 )}
 

@@ -1,15 +1,18 @@
 import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget'
-
+import { Link } from 'react-router-dom'
 const NavBar = () => {
     return (
         <nav className='nave'>
-            <h1>Grail Store</h1>
+            <Link to='/'>
+            <h2>Grail Store</h2>
+            </Link>    
             <div className='container'>
-                <button className='buttonNav'>Camisas</button>
-                <button className='buttonNav'>Pantalones</button>
-                <button className='buttonNav'>Camperas</button>
-                <button className='buttonNav'>Buzos</button>
+                <Link to= '/category/camisa'>Camisas</Link>
+                <Link to= '/category/pantalon'>Pantalones</Link>
+                <Link to= '/category/campera'>Camperas</Link>
+                <Link to= '/category/buzo'>Buzos</Link>
+
             </div>
             <CartWidget/>
         </nav>

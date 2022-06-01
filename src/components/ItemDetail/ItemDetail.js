@@ -12,9 +12,7 @@ const ItemDetail = ({name, img, desc, price}) => {
                     <p>{desc}</p>
                     <p>$ {price}</p>
                 </div>
-            
             </div>
-
         </div>
         
     )
