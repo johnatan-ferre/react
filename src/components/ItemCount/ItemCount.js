@@ -1,24 +1,21 @@
 import React, { useState } from 'react'
 
-function ItemCount({stock}) {
-    const [count, setCount] = useState(0);
 
-    function agregar () {
+function ItemCount({stock, inicio=1, onAdd}) {
+    const [count, setCount] = useState(inicio);
+
+    function agregar() {
         if(count < stock){
             setCount(count + 1);
         }
     }
 
-function quitar () {
-    if(count > 0) {
+function quitar() {
+    if(count > 1) {
         setCount(count - 1);
     }
 }
 
-function onAdd (){
-    alert(`Agregó ${count} productos a su carrito.`);
-
-}
     return (
     <div>
         <div>
@@ -27,7 +24,7 @@ function onAdd (){
             <button onClick={agregar}>+</button>
         </div>
 
-        <button onClick={onAdd}>Comprar</button>
+        <button onClick={() => onAdd(count)}>Comprar</button>
     </div>
     )
 }

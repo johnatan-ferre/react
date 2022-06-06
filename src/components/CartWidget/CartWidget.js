@@ -2,8 +2,9 @@ const CartWidget = () => {
     return (
         <div>
             <img src='./images/cart.svg' alt='cart-widget'/>
-            7
+            <p>7</p>
         </div>
     )
 }
 export default CartWidget
+
