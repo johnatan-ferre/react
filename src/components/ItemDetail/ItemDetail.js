@@ -1,14 +1,19 @@
 import './ItemDetail.css'
-import ItemCount from '../ItemCount/ItemCount'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
+import  CarroContext from '../../context/CartContext'
+import ItemCount from '../ItemCount/ItemCount'
 
-const ItemDetail = ({name, img, desc, price, stock}) => {
+const ItemDetail = ({id, name, img, desc, price, stock}) => {
 
     const [cantidad, setCantidad] = useState(0)
+    const { agregarItem, traerProducto } = useContext(CarroContext)
 
-    const handleOnAdd = (count) => {
-        setCantidad(count)
+    const handleOnAdd = (cantidad) => {
+        setCantidad(cantidad)
+
+        agregarItem({ id, name, price, cantidad})
+
     }
     return(
         <div className="DetailCard">
@@ -22,8 +27,9 @@ const ItemDetail = ({name, img, desc, price, stock}) => {
                     <p>$ {price}</p>  
                 </div>
             </div>
-        { cantidad > 0 ? <Link to='/cart'>Termine su compra</Link> :
-        <ItemCount stock = {stock} onAdd={handleOnAdd}/>}
+        { cantidad > 0 
+                    ?<Link to='/cart'>Termine su compra</Link> 
+                    :<ItemCount stock = {stock} onAdd={handleOnAdd} initial={traerProducto(id)?.cantidad}/>}
         </div>
         
     )
