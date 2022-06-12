@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react'
-import {getItems, getItemsByCategory} from '../utils/CustomFetch';
-import ItemList from '../ItemList/ItemList';
+import {useEffect, useState} from 'react'
+import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
+import { getDocs, collection, query, where } from 'firebase/firestore'
+import { db } from '../../services/firebase'
 
 function ItemListContainer() {
     const [items, setItems] = useState([]);
@@ -10,28 +11,40 @@ function ItemListContainer() {
     const { catId } = useParams()
 
     useEffect(() => {
-
         setLoading(true)
 
-        if(!catId) {
-            getItems().then(res => {
-                setItems(res)
-            }).finally(() =>{
-                setLoading(false)
+        const collectionRef = catId
+            ? query(collection(db, 'productos'), where('category', '==', catId))
+            : collection(db, 'productos')
+
+        getDocs(collectionRef).then(res => {
+            const items = res.docs.map(doc => {
+                return { id: doc.id, ...doc.data() }
             })
-        } else {
-            getItemsByCategory(catId).then(res => {
-                setItems(res)
-            }).finally(() =>{
-                setLoading(false)
-            })
-        }
+            setItems(items)
+
+        }).finally(() => {
+            setLoading(false)
+        })
+
+        // if(!catId) {
+        //     getItems().then(res => {
+        //         setItems(res)
+        //     }).finally(() =>{
+        //         setLoading(false)
+        //     })
+        // } else {
+        //     getItemsByCategory(catId).then(res => {
+        //         setItems(res)
+        //     }).finally(() =>{
+        //         setLoading(false)
+        //     })
+        // }
         
     }, [catId])
 
     if(loading) {
         return <h2>Cargando..</h2>
-
     }
 
 return (
@@ -40,7 +53,6 @@ return (
     </div>
     )
 }
-
 
 export default ItemListContainer
 

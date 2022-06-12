@@ -25,4 +25,8 @@ Las cards que contienen la información de los productos tiene un botón para ve
 - En la ruta ' /category/:catId ' se monta el _ItemListContainer_, pero en este caso se hace un filtrado según lo que se quiera buscar.
 
 ![navegacion-grailecommerce](./public/images/grail-navegacion.gif)
- 
+
+## _Se utiliza Firebase_
+
+- Se implementa para el backend.
+- Se usa la base de datos Firestore.
