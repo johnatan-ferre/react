@@ -48,6 +48,16 @@ export const CarroContextProvider = ({ children }) => {
         setCarro(newCarro)
     }
 
+
+    const precioTotal = () => {
+        let total = 0
+        carro.forEach(item => {
+            total += item.cantidad * item.price
+        })
+        return total
+    }
+
+
     const vaciarCarro = () => {
         setCarro([])
     }
@@ -55,8 +65,7 @@ export const CarroContextProvider = ({ children }) => {
 
 
     return(
-        <CarroContext.Provider value={{carro, agregarItem, quitarItem, traerProducto, widgetCantidad, enCarro, vaciarCarro}}>
-
+        <CarroContext.Provider value={{carro, agregarItem, quitarItem, traerProducto, widgetCantidad, enCarro, precioTotal, vaciarCarro}}>
             { children }
         </CarroContext.Provider>
 
