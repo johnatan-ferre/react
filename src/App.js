@@ -21,7 +21,7 @@ function App() {
                 <Route path='/category/:catId' element={<ItemListContainer />} /> 
                 <Route path='/cart' element={<Carro/>}/>
                 <Route path='*' element={<h1>Ruta no encontrada.</h1>} />  
-                <Route />  
+                  
               </Routes>
           </BrowserRouter>
           </CarroContextProvider>

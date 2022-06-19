@@ -27,20 +27,6 @@ function ItemListContainer() {
             setLoading(false)
         })
 
-        // if(!catId) {
-        //     getItems().then(res => {
-        //         setItems(res)
-        //     }).finally(() =>{
-        //         setLoading(false)
-        //     })
-        // } else {
-        //     getItemsByCategory(catId).then(res => {
-        //         setItems(res)
-        //     }).finally(() =>{
-        //         setLoading(false)
-        //     })
-        // }
-        
     }, [catId])
 
     if(loading) {
