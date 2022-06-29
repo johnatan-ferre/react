@@ -13,9 +13,6 @@ $ npm install
 $ npm start
 ```
 
-
-
-
 ### En el proyecto se puede utilizar:
 
 ### `npm start`
@@ -27,16 +24,20 @@ La página recarga cada vez que se realizan cambios.
 
 ## _Variables de Entorno_
 
-Ver [`.env.example`]()
+Se debe crear un archivo `.env` que tengan configuradas las variables de su propio proyecto de Firebase.
+
+Ver [`.env.example`](https://github.com/johnatan-ferre/react/blob/entregafinal/.env.example) por un ejemplo.
+
+
 
 ## _La aplicación contiene las siguentes vistas_
 
-- En la ruta ' / ' se monta el componente _ItemListContainer_, que carga un listado de productos.\
+- En la ruta _' / '_ se monta el componente _ItemListContainer_, que carga un listado de productos.\
 Las cards que contienen la información de los productos tiene un botón para ver más detalles.
 
-- En la ruta ' /item/:id ' se monta el componente _ItemDetailContainer'_, que muestra el detalle de un solo producto.
+- En la ruta _' /item/:id '_ se monta el componente _ItemDetailContainer'_, que muestra el detalle de un solo producto.
 
-- En la ruta ' /category/:catId ' se monta el _ItemListContainer_, pero en este caso se hace un filtrado según lo que se quiera buscar.
+- En la ruta _' /category/:catId '_ se monta el _ItemListContainer_, pero en este caso se hace un filtrado según lo que se quiera buscar.
 
 ![navegacion-grailecommerce](./public/images/grail-navegacion.gif)
 
