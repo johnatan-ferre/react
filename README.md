@@ -4,6 +4,16 @@
 Para comenzar a utilizarlo se debe clonar [este repositorio.](https://github.com/johnatan-ferre/react)\
 Luego se debe ejecutar `npm install`
 
+Se hace de la siguiente manera:
+
+```bash
+$ git clone https://github.com/johnatan-ferre/react.git
+$ cd grailecommerce
+$ npm install
+$ npm start
+```
+
+
 
 
 ### En el proyecto se puede utilizar:
@@ -14,6 +24,10 @@ Da inicio a la ejecución de la aplicación.\
 Abre un [servidor local](http://localhost:3000) en el navegador.
 
 La página recarga cada vez que se realizan cambios.
+
+## _Variables de Entorno_
+
+Ver [`.env.example`]()
 
 ## _La aplicación contiene las siguentes vistas_
 
