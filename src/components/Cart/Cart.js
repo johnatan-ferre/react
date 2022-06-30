@@ -32,7 +32,7 @@ const Carro = () => {
     return (
         <div>
             <h1>Carrito</h1>
-                <div>
+                
                 { carro.map((item) => {
                         return(
                             <div key={item.id}>
@@ -44,11 +44,9 @@ const Carro = () => {
                             </div>
                         )})
                 }
-                </div>
-            <div>
-
+                
             
-
+            <div>
             { cantidad === 0
                     ? <Link to= '/'>Carrito vacío. Mire nuestros productos</Link> 
                     : [<div>
@@ -56,9 +54,8 @@ const Carro = () => {
                     </div>, 
                     <button onClick={() => vaciarCarro()}>Borrar todo</button>,
                     <button onClick={crearOrden}>Generar orden</button>,
-                    <Link to= '/'>Seguir Comprando</Link>]}
-
-                
+                    <Link to= '/'>Seguir Comprando</Link>]
+            }    
             </div>
         </div>
     )
