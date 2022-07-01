@@ -16,12 +16,6 @@ const { id } = useParams( )
             const product = { id: res.id, ...res.data()}
             setProduct(product)
         }).finally(() => {setLoading(false)})
-
-
-
-        // getProduct(id).then(res => {
-        //     setProduct(res)
-        // })
     }, [id])
 
     if(loading) {

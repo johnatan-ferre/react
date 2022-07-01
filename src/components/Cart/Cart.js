@@ -1,37 +1,20 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import CarroContext from '../../context/CartContext'
-import { addDoc, collection } from 'firebase/firestore'
-import { db } from '../../services/firebase'
+import CarroVacio from '../EmptyCart/EmptyCart'
 
 const Carro = () => {
 
     const { carro, quitarItem, vaciarCarro, widgetCantidad, precioTotal } = useContext(CarroContext)  
     const cantidad = widgetCantidad()
 
-    const crearOrden = ()=> {
-        console.log('Se crea la orden')
+    if(cantidad === 0)
+        return(<CarroVacio />)
 
-
-
-        const objOrder = {
-            buyer: {
-                name: 'pepito',
-                email: 'pepito@mail.com',
-                phone: '123456789'
-            },
-            items: carro,
-            total: precioTotal()       
-        }
-
-        const collectionRef = collection(db, 'ordenes')
-
-        addDoc(collectionRef, objOrder)
-    }
 
     return (
         <div>
-            <h1>Carrito</h1>
+            <h1>Carrito de compras</h1>
                 
                 { carro.map((item) => {
                         return(
@@ -44,18 +27,14 @@ const Carro = () => {
                             </div>
                         )})
                 }
-                
-            
+
             <div>
-            { cantidad === 0
-                    ? <Link to= '/'>Carrito vacío. Mire nuestros productos</Link> 
-                    : [<div>
+                <div>
                     Total: $ {precioTotal()}
-                    </div>, 
-                    <button onClick={() => vaciarCarro()}>Borrar todo</button>,
-                    <button onClick={crearOrden}>Generar orden</button>,
-                    <Link to= '/'>Seguir Comprando</Link>]
-            }    
+                </div>
+                <button onClick={() => vaciarCarro()}>Borrar todo</button>,
+                <Link to= '/'>Seguir Comprando</Link>
+                <Link to= '/checkout'>Finalizar Compra</Link>        
             </div>
         </div>
     )
