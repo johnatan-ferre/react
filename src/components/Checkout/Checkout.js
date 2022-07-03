@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import CarroContext from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert2";
+import './Checkout.css'
 
 
 
@@ -65,15 +66,13 @@ const Checkout = () => {
                 title: `Agradecemos su compra ${buyer.nombre}`,
                 text: `Fue creada una orden con la identificación: ${id}`,
                 icon: 'success'});
-        
             vaciarCarro();
-            navigate('/');
-        }).catch(error => {
+            navigate('/thankyou');
+        }).catch((error) => {
             swal.fire({
                 title: 'Disculpe',
                 text: 'La cantidad solicitada excede el stock disponible',
                 icon: 'error'});
-
             vaciarCarro();
             navigate('/');
         }).finally(() => {setLoading(false)})
@@ -87,17 +86,17 @@ const Checkout = () => {
     
     return( 
         <div>
-            <h2>Orden de compra</h2>
-            <form onSubmit={handleSubmit(crearOrden)}>
-                <div>
+            <h2 className='Title'>Orden de compra</h2>
+            <form onSubmit={handleSubmit(crearOrden)} className='Form'>
+                <div className='Item-form'>
                     <label>Nombre</label>
                     <input type='text' placeholder='Nombre' {...register('nombre', {required: true})}
                     onChange={handleInputChange}
                     value={buyer.nombre} />
                     {errors.nombre?.type === 'required' && <p>El nombre es un campo obligatorio.</p>}
                 </div>
-                <div>
-                    <label>Email</label>
+                <div className='Item-form'>
+                    <label>E-mail</label>
                     <input type='text' placeholder='Email' {...register('email', {required: true,
                     pattern: /^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/})}
                     onChange={handleInputChange}
@@ -105,14 +104,14 @@ const Checkout = () => {
                     {errors.email?.type === 'required' && <p>La dirección de correo es un campo obligatorio.</p>}
                     {errors.email?.type === 'pattern' && <p>Ha ingresado un formato incorrecto para el mail.</p>}
                 </div>
-                <div>
-                    <label>Telefono</label>
+                <div className='Item-form'>
+                    <label>Teléfono</label>
                     <input type='number' placeholder='Telefono' {...register('telefono', {required: true})}
                     onChange={handleInputChange}
                     value={buyer.telefono} />
                     {errors.telefono?.type === 'required' && <p>El teléfono es un campo obligatorio.</p>}
                 </div>
-                <button type='submit'>Enviar</button>
+                <button type='submit'className='Btn'>Enviar</button>
             </form>
         </div> 
 )}

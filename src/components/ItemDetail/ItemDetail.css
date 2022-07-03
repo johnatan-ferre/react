@@ -1,10 +1,31 @@
 .DetailCard {
     display: flex;
-    margin: 10%;
+    flex-direction: column;
+    margin: 1% 25%;
+    justify-content: center;
 }
 
 .DetailContainer {
     display: flex;
+    justify-content: space-around;
     flex-direction: row;
     border: 4px gray solid;
+    border-radius: 10px;
+    background-color: rgb(215, 219, 221);
+}
+
+.Btn {
+    width: auto;
+    display: inline-block;
+    padding: 1%;
+    margin: 2%;
+    font-size: 14px;
+    border-radius: 6px;
+    background: rgb(111, 217, 155);
+    text-decoration: none;
+    color: rgb(20, 40, 51);
+    font-weight: 700;
+    align-self: center;
+    border: none;
+    cursor: pointer
 }

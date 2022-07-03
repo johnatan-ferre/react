@@ -10,15 +10,15 @@ const NavBar = () => {
     const cantidad = widgetCantidad()
 
     return (
-        <nav className='nave'>
+        <nav className='Nave'>
             <Link to='/'>
-            <h2>Grail Store</h2>
+            <h2 className='Title'>Grail Store</h2>
             </Link>    
-            <div className='container'>
-                <Link to= '/category/camisa'>Camisas</Link>
-                <Link to= '/category/pantalon'>Pantalones</Link>
-                <Link to= '/category/campera'>Camperas</Link>
-                <Link to= '/category/buzo'>Buzos</Link>
+            <div className='Container'>
+                <Link to= '/category/camisa' className='Btn-nav'>Camisas</Link>
+                <Link to= '/category/pantalon' className='Btn-nav'>Pantalones</Link>
+                <Link to= '/category/campera' className='Btn-nav'>Camperas</Link>
+                <Link to= '/category/buzo' className='Btn-nav'>Buzos</Link>
 
             </div>
             {cantidad > 0 && <CartWidget/>}

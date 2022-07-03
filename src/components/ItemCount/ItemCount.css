@@ -1,0 +1,12 @@
+.Contador {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.Contador2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

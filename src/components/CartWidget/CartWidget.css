@@ -1,0 +1,9 @@
+.Widget {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 6px;
+    background: rgb(204, 209, 209);
+    padding: 3%;
+}

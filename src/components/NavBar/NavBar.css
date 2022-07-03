@@ -1,19 +1,32 @@
-.nave {
+.Nave {
     display: block;
 }
-nav h1 {
+.Title {
     display: block;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 4rem;
+    text-decoration: none;
+    color: rgb(11, 83, 69);
+    
 }
-.container {
+.Container {
     display: flex;
+    justify-content: space-around;
     align-items: center;
     margin: 10%
 }
 
-.buttonNav {
-    display: flex;
-    align-items: center;
-    text-align: justify;
-    background-color: aquamarine;
+.Btn-nav {
+    width: auto;
+    display: inline-block;
+    padding: 10%;
+    margin-right: 10%;
+    font-size: 20px;
+    border-radius: 6px;
+    background: rgb(204, 209, 209);
+    text-decoration: none;
+    color: rgb(20, 40, 51);
+    font-weight: 700;
+    border: none;
+    cursor: pointer
 }
