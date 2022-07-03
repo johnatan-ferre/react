@@ -1,4 +1,5 @@
-# Grail E-Commerce
+
+# **Grail E-Commerce**
 ## _Funcionamiento_
 
 Para comenzar a utilizarlo se debe clonar [este repositorio.](https://github.com/johnatan-ferre/react)\
@@ -37,7 +38,13 @@ Las cards que contienen la información de los productos tiene un botón para ve
 
 - En la ruta _' /item/:id '_ se monta el componente _ItemDetailContainer'_, que muestra el detalle de un solo producto.
 
-- En la ruta _' /category/:catId '_ se monta el _ItemListContainer_, pero en este caso se hace un filtrado según lo que se quiera buscar.
+- En la ruta _' /category/:catId '_ se monta el componente _ItemListContainer_, pero en este caso se hace un filtrado según lo que se quiera buscar.
+
+- En la ruta _'/cart'_ se monta el carrito de compras, ( _Cart_ ), con sus correspondientes funciones.
+
+- En la ruta _'/checkout'_ se monta el componente _Checkout_, con el formulario para completar los datos personales para luego finalizar la compra.
+
+- En la ruta _'/thankyou'_ se monta el componente _'Thakyou'_, como vista final con mensaje hacia el comprador, y un link hacia la página de inicio.
 
 ![navegacion-grailecommerce](./public/images/grail-navegacion.gif)
 
